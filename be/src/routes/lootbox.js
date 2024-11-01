@@ -27,7 +27,7 @@ router.post('/open', async (req, res) => {
         console.log('user.chanceFactors:', user.chanceFactors);
         console.log('lootbox.rewards:', lootbox.rewards);
         const adjustedRewards = lootbox.rewards.map(reward => {
-            const chanceFactor = user.chanceFactors[boxId] || 1; // Если chanceFactors - объект
+            const chanceFactor = user.chanceFactors[boxId] || 1;
             return {
                 item: reward.item,
                 chance: reward.baseChance * chanceFactor
